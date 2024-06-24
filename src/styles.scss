@@ -1,1 +1,146 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body {
+    background-color: #f6f7f8;
+    padding: 20px;
+    color: #072635;
+    height: 100vh;
+    // overflow: hidden;
+    font-family: "Manrope", sans-serif;
+}
+
+.loader {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin-top: -150px;
+}
+
+header {
+    background-color: white;
+}
+
+header {
+    display: flex;
+    // display: grid;
+    // grid-template-columns: 25% 50% 25%;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius: 70px;
+    height: 72px;
+    padding-left: 20px;
+    margin-bottom: 35px;
+}
+
+.logo, nav, .account-options {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-items {
+    // cursor: pointer;
+    list-style-type: none;
+    display: flex;
+    font-weight: bold;
+
+    li {
+        display: flex;
+        cursor: pointer;
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            margin-right: 10px;
+            max-width: 16px;
+        }
+    }
+}
+
+.nav-items > * {
+    // margin: 30px;
+    padding: 12px 20px;
+}
+
+.nav-items > *.active {
+    background-color: #01F0D0;
+    border-radius: 41px;
+}
+
+.account-options {
+    margin-right: 10px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    // flex: 2 1 auto;
+    // flex-grow: 2;
+
+    .image-holder, .account-details {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        margin-right: 10px;
+    }
+
+    .account-details {
+        border-right: 2px solid rgba(128, 128, 128, 0.13);
+        flex-direction: column;
+
+        .account-name {
+            font-weight: bold;
+        }
+    }
+
+    .account-details > * {
+        display: block;
+        // width: 60%;
+        margin: 0;
+        margin-right: 25px;
+    }
+
+    .action-items {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        margin-left: 10px;
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            cursor: pointer;
+
+            img {
+                height: 25px;
+                // width: 20px;
+            }
+        }
+
+        .first-action-item {
+            margin-right: 50px;
+        }
+    }
+}
+
+main {
+    // display: grid;
+    // grid-template-columns: 25% 75%;
+    display: flex;
+    margin-bottom: 20px;
+
+    .app-side-nav {
+        min-width: 367px;
+        // height: calc(100% + 1000px);
+        margin-right: 50px;
+    }
+
+    .app-main-section {
+        // max-width: 1200px;
+        width: 75%;
+    }
+}
+

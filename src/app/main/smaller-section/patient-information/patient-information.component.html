@@ -1,0 +1,72 @@
+<section *ngIf="patientData">
+
+    <div class="header">
+        <div class="profile-picture">
+            <img [src]="patientData.profile_picture" alt="">
+        </div>
+    
+        <div>
+            <h3 class="patient-name">{{ patientData.name }}</h3>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="detail-items calendar">
+            <div class="img-holder">
+                <img src="assets/images/calendar_today.png" alt="">
+            </div>
+            <div class="info-text">
+                <p>Date Of Birth</p>
+                <p class="bold-data"> {{ patientData.date_of_birth }} </p>
+            </div>
+        </div>
+
+        <div class="detail-items">
+            <!-- <div class="img-holder" [style]="'background: transparent url('img/BirthIcon.png') 0% 0% no-repeat padding-box;'"> -->
+            <!-- <div class="img-holder" [style]="{background: 'url(assets/images/Layer_2@2x0.png) no-repeat'}"> -->
+            <div class="img-holder">
+                <img src="assets/images/FemaleIcon.svg" alt="">
+            </div>
+            <div class="info-text">
+                <p>Gender</p>
+                <p class="bold-data"> {{ patientData.gender }} </p>
+            </div>
+        </div>
+        <div class="detail-items">
+            <div class="img-holder">
+                <img src="assets/images/PhoneIcon.svg" alt="">
+            </div>
+            <div class="info-text">
+                <p>Contact Info.</p>
+                <p class="bold-data"> {{ patientData.phone_number }} </p>
+            </div>
+        </div>
+        <div class="detail-items">
+            <div class="img-holder">
+                <img src="assets/images/PhoneIcon.svg" alt="">
+            </div>
+            <div class="info-text">
+                <p>Emergency Contacts</p>
+                <p class="bold-data"> {{ patientData.emergency_contact }} </p>
+            </div>
+        </div>
+        <div class="detail-items">
+            <div class="img-holder">
+                <img src="assets/images/InsuranceIcon.svg" alt="">
+            </div>
+            <div class="info-text">
+                <p>Insurance Provider</p>
+                <p class="bold-data"> {{ patientData.insurance_type }} </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <button>Show All Information</button>
+    </div>
+
+</section>
+
+<section *ngIf="!patientData">
+    loading ....
+</section>

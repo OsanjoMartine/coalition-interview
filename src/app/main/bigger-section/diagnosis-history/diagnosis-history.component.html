@@ -1,0 +1,126 @@
+<section>
+    <div class="header">
+        <h3>Diagnosis History</h3>
+    </div>
+
+    <div *ngIf="patientData" class="body">
+        <div class="main-area">
+            <div class="graph-area">
+                <div class="graph-area-header">
+                    <h4>Blood Pressure</h4>
+                    <div class="time-filter">
+                        <p>Last 6 months</p>
+                        <div class="img-holder">
+                            <img src="assets/images/expand_more.png" alt="">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="graph-holder">
+                    <canvas id="acquisitions"></canvas>
+                </div>
+    
+            </div>
+    
+            <div class="extra-info">
+                <div class="systolic">
+                    <div class="circle-title">
+                        <div class="circle-holder">
+                            <div class="circle-color systolic"></div>
+                        </div>
+                        <p class="circle-text">Systolic</p>
+                    </div>
+                    <div class="extra-info-numbers">
+                        <h4 *ngIf="this.patientData?.diagnosis_history">{{ this.patientData.diagnosis_history[0].blood_pressure.systolic.value }}</h4>
+                        <div *ngIf="this.patientData?.diagnosis_history" class="higher-lower">
+                            <div *ngIf="imageDecider(this.patientData.diagnosis_history[0].blood_pressure.systolic.levels) === 'Lower'">
+                                <img src="assets/images/ArrowDown.png" alt="">
+                            </div>
+                            <div *ngIf="imageDecider(this.patientData.diagnosis_history[0].blood_pressure.systolic.levels) === 'Higher'">
+                                <img src="assets/images/ArrowUp.png" alt="">
+                            </div>
+                            <p>{{ this.patientData.diagnosis_history[0].blood_pressure.systolic.levels }}</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="diastolic">
+                    <div class="circle-title">
+                        <div class="circle-holder">
+                            <div class="circle-color diastolic"></div>
+                        </div>
+                        <p class="circle-text">Diastolic</p>
+                    </div>
+                    <div class="extra-info-numbers">
+                        <h4 *ngIf="this.patientData?.diagnosis_history">{{ this.patientData.diagnosis_history[0].blood_pressure.diastolic.value }}</h4>
+                        <div *ngIf="this.patientData?.diagnosis_history" class="higher-lower">
+                            <div *ngIf="imageDecider(this.patientData.diagnosis_history[0].blood_pressure.diastolic.levels) === 'Lower'">
+                                <img src="assets/images/ArrowDown.png" alt="">
+                            </div>
+                            <div *ngIf="imageDecider(this.patientData.diagnosis_history[0].blood_pressure.diastolic.levels) === 'Higher'">
+                                <img src="assets/images/ArrowUp.png" alt="">
+                            </div>
+                            <p>{{ this.patientData.diagnosis_history[0].blood_pressure.diastolic.levels }}</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    
+        <div class="vitals-cards-holder">
+    
+            <div class="vitals-card heart">
+                <div>
+                    <img src="assets/images/respiratory_rate.png" alt="">
+                </div>
+                <div class="vitals-info">
+                    <p class="card-title">Respiratory Rate</p>
+                    <p *ngIf="this.patientData?.diagnosis_history" class="card-number">{{ this.patientData.diagnosis_history[0].respiratory_rate.value }} bpm</p>
+                </div>
+                <div>
+                    <p *ngIf="this.patientData?.diagnosis_history">{{ this.patientData.diagnosis_history[0].respiratory_rate.levels }}</p>
+                </div>
+            </div>
+    
+            <div class="vitals-card temparature">
+                <div>
+                    <img src="assets/images/temperature.png" alt="">
+                </div>
+                <div class="vitals-info">
+                    <p class="card-title">Temperature</p>
+                    <p *ngIf="this.patientData?.diagnosis_history" class="card-number">
+                        {{ this.patientData.diagnosis_history[0].temperature.value }}<span style="font-size: 1.1em;">&#8457;</span></p>
+                </div>
+                <div>
+                    <p *ngIf="this.patientData?.diagnosis_history">{{ this.patientData.diagnosis_history[0].temperature.levels }}</p>
+                </div>
+            </div>
+    
+            <div class="vitals-card heart_rate">
+                <div>
+                    <img src="assets/images/HeartBPM.png" alt="">
+                </div>
+                <div class="vitals-info">
+                    <p class="card-title">Heart Rate</p>
+                    <p *ngIf="this.patientData?.diagnosis_history" class="card-number">{{ this.patientData.diagnosis_history[0].heart_rate.value }} BPM</p>
+                </div>
+                <div class="vitals-higher-low">
+                    <div *ngIf="this.patientData?.diagnosis_history" class="higher-lower">
+                        <div *ngIf="imageDecider(this.patientData.diagnosis_history[0].heart_rate.levels) === 'Lower'">
+                            <img src="assets/images/ArrowDown.png" alt="">
+                        </div>
+                        <div *ngIf="imageDecider(this.patientData.diagnosis_history[0].heart_rate.levels) === 'Higher'">
+                            <img src="assets/images/ArrowUp.png" alt="">
+                        </div>
+                        <!-- <p>{{ this.patientData.diagnosis_history[0].heart_rate.systolic.levels }}</p> -->
+                        <p *ngIf="this.patientData?.diagnosis_history">{{ this.patientData.diagnosis_history[0].heart_rate.levels }}</p>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+    </div>
+
+    <div *ngIf="!patientData" style="padding: 30px;">
+        loading
+    </div>
+</section>

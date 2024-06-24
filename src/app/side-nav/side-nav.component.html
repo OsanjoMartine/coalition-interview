@@ -1,0 +1,27 @@
+<section>
+    <div class="side-menu-header">
+        <h3>Patients</h3>
+        <div class="search-div">
+            <img src="assets/images/search.png" alt="">
+        </div>
+    </div>
+
+    <div *ngIf="data" style="padding: 7px;">
+        <div class="patient-list">
+            <div *ngFor="let patient of data" class="patient" [class]="{active: patient.name === 'Jessica Taylor'}">
+                <div class="profile-picture">
+                    <img [src]="patient.profile_picture" alt="">
+                </div>
+        
+                <div class="patient-details">
+                    <p class="patient-name">{{ patient.name }}</p>
+                    <p>{{ patient.gender }}, {{ patient.age }}</p>
+                </div>
+        
+                <div class="more-options">
+                    <img src="assets/images/more_horiz.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

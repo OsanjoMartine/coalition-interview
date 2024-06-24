@@ -1,0 +1,186 @@
+section {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 16px;
+    /*height: calc(100vh - 100px);*/
+    /*overflow-y: scroll;*/
+    margin-bottom: 40px;
+}
+
+.header {
+    h3 {
+        font-weight: 800;
+        font-size: 24px;
+    }
+}
+
+.main-area {
+    background-color: #F4F0FE;
+    display: flex;
+    border-radius: 16px;
+    width: 100%;
+}
+
+.graph-area {
+    padding: 5px 20px 20px 20px;
+    width: 70%;
+}
+
+.graph-area-header {
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+        margin-top: 10px;
+        font-size: 1.3em;
+    }
+}
+
+.time-filter {
+    display: flex;
+
+    .img-holder {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+
+        img {
+            width: 10px;
+            height: 6px;
+            margin: 0 10px;
+            margin-top: -8px;
+        }
+    }
+}
+
+.extra-info {
+    width: 30%;
+    padding-right: 30px;
+}
+
+.systolic, .diastolic {
+    .extra-info-numbers {
+        h4 {
+            // margin: 10px 0;
+            margin: 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .higher-lower {
+            display: flex;
+            
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                margin-right: 10px;
+
+                img {
+                    width: 10px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+}
+
+.systolic {
+    border-bottom: solid 2px rgba(128, 128, 128, 0.15);
+    width: 100%;
+}
+
+.circle-title {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.circle-holder {
+    /*height: 100%;*/
+    position: relative;
+}
+
+.circle-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    position: absolute;
+    top: 37%
+}
+
+.circle-color.systolic {
+    background-color: #e66fd2;
+}
+
+.circle-color.diastolic {
+    background-color: #8c6fe6;
+}
+
+.circle-text {
+    margin-left: 20px;
+}
+
+/* .graph-holder {
+    // width: 70%;
+}*/
+
+/* the three cards */
+.vitals-cards-holder {
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.vitals-card {
+    border-radius: 12px;
+    width: 30%;
+    padding: 30px;
+    padding-bottom: 5px;
+    margin-right: 30px;
+
+    .vitals-info {
+        .card-title {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        .card-number {
+            font-size: 30px;
+            font-weight: 800;
+            margin: 0px;
+        }
+    }
+
+    .vitals-higher-low {
+        .higher-lower {
+            display: flex;
+            
+            div {
+                display: flex;
+                flex-wrap: wrap;
+                align-content: center;
+                margin-right: 10px;
+
+                img {
+                    width: 10px;
+                    height: 6px;
+                }
+            }
+        }
+    }
+}
+
+.vitals-card:last-child {
+    margin-right: 0;
+}
+
+.vitals-card.heart {
+    background-color: #E0F3FA;
+}
+.vitals-card.temparature {
+    background-color: #FFE6E9;
+}
+.vitals-card.heart_rate {
+    background-color: #FFE6F1;
+}
+

@@ -1,0 +1,32 @@
+<section *ngIf="patientData">
+    <div class="header">
+        <h3>Diagnostic List</h3>
+    </div>
+
+    <div style="padding: 10px;">
+        <div class="table">
+            <div class="table-head">
+                <table>
+                    <tr class="headers">
+                        <th style="width: 25%;">Problem/Diagnosis</th>
+                        <th style="width: 50%;">Description</th>
+                        <th style="width: 25%;">Status</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="table-body">
+                <table>
+                    <tr *ngFor="let diagnostic of patientData?.diagnostic_list">
+                        <td style="width: 25%;">{{ diagnostic.name }}</td>
+                        <td style="width: 50%;">{{ diagnostic.description }}</td>
+                        <td style="width: 25%;">{{ diagnostic.status }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="!patientData" style="padding: 30px;">
+    loading ...
+</section>

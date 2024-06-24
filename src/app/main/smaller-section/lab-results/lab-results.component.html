@@ -1,0 +1,20 @@
+<section *ngIf="patientData">
+    <div class="header">
+        <h3>Lab Results</h3>
+    </div>
+
+    <div style="padding: 10px;">
+        <div *ngIf="patientData?.lab_results" class="body">
+            <div *ngFor="let result of patientData.lab_results" class="lab-result">
+                <p>{{ result }}</p>
+                <div class="download-image">
+                    <img src="assets/images/download.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="!patientData" style="padding: 30px;">
+    loading ...
+</section>

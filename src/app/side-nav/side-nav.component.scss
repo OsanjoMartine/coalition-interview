@@ -1,0 +1,92 @@
+section {
+    background-color: white;
+    padding: 3px 0;
+    border-radius: 16px;
+}
+
+.patient-list {
+    height: calc(100vh + 50px);
+    overflow-y: scroll;
+}
+
+.side-menu-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    h3 {
+        font-weight: 800;
+        font-size: 24px;
+    }
+    .search-div {
+        display: flex;
+        align-content: center;
+        flex-wrap: wrap;
+
+    }
+}
+
+.patient {
+    display: grid;
+    grid-template-columns: 25% 60% 15%;
+    // align-content: center;
+    padding: 20px;
+    cursor: pointer;
+
+    .profile-picture {
+        display: flex;
+    }
+
+    .profile-picture > img {
+        width: 48px;
+        height: 48px;
+    }
+
+    .patient-details {
+        padding: 0 50px 0 0;
+    }
+
+    .patient-details > * {
+        margin: 5px auto;
+    }
+
+    .patient-name {
+        font-weight: bold;
+        font-family: 'Manrope';
+    }
+
+    .more-options {
+        display: flex;
+        justify-content: end;
+    }
+
+    .more-options > img {
+        align-self: center;
+    }
+}
+
+.patient.active {
+    background-color: #D8FCF7;
+}
+
+/* Customizes the whole scrollbar */
+::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+/* Customizes the track of the scrollbar */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+}
+
+/* Customizes the thumb of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background: #000; /* Color of the thumb */
+    border-radius: 3px;
+    width: 6px;
+}
+
+/* Changes the thumb color on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Darker color on hover */
+}

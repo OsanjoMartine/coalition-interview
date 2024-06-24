@@ -1,0 +1,72 @@
+section {
+    background-color: white;
+    padding: 25px 20px;
+    border-radius: 16px;
+    // margin-top: 30px;
+}
+
+.header {
+    text-align: center;
+    
+    .profile-picture {
+        img {
+            object-fit: cover;
+            width: 200px;
+            height: 200px;
+        }
+    }
+
+    .patient-name {
+        font-size: 24px;
+        font-weight: 800;
+    }
+}
+
+.body {
+    .detail-items {
+        display: flex;
+        margin-bottom: 40px;
+
+        .img-holder {
+            margin: auto 0;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            // background-color: #f6f7f8;
+            background-color: rgba(128, 128, 128, 0.1);
+            margin-right: 15px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .info-text > * {
+            margin: 0;
+        }
+
+        .info-text {
+            .bold-data {
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    button {
+        background-color: #01F0D0;
+        border: none;
+        outline: none;
+        border-radius: 41px;
+        padding: 13px 44px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+}
